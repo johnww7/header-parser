@@ -19,8 +19,6 @@ app.get("/", function (req, res) {
 });
 
 app.get("/api/whoami", function(req, res) {
-  console.log('headers: ' + JSON.stringify(req.headers));
-
   res.json({ipaddress: req.ip, language: req.headers['accept-language'],
   software: req.headers['user-agent'] });
 });
