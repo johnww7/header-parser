@@ -20,8 +20,9 @@ app.get("/", function (req, res) {
 
 app.get("/api/whoami", function(req, res) {
   console.log('headers: ' + JSON.stringify(req.headers));
-  res.json({ipaddress:"unknown", language:"no clue",
-  software: "guessing", });
+
+  res.json({ipaddress: req.headers['host'], language: req.headers['accept-language'],
+  software: req.headers['user-agent'] });
 });
 
 // your first API endpoint...
